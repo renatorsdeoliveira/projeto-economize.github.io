@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+    // Rolagem suave
     $('.menu ul li a[href^="#"]').on('click', function(e) {
         e.preventDefault();
         var id = $(this).attr('href'),
@@ -9,21 +11,20 @@ $(document).ready(function() {
         }, 500);
     });
 
-
+    // Acende apaga lâmpada 
     $("#contato .box-info .lampada img").on('click', function(){
-        let acesa = 'image/acessa.png';
+        let acende  = 'image/acessa.png';
         let apagada = 'image/apagada.png';
         let estado = $(this).attr("src")
         
-        if(estado == acesa){
+        if(estado == acende){
             $(this).attr("src", apagada );
         }else{
-            $(this).attr("src", acesa );
+            $(this).attr("src", acende );
         }
-        
-
     })
 
+    // Mostra contato 
     $('#contato .box-info .descricao .contado').hide();
     $('.btn').on('click', function(e){
         e.preventDefault();
@@ -31,9 +32,7 @@ $(document).ready(function() {
     });
 
 
-
-
-
+    // Volta ao topo  
     $(window).scroll(function(){
         if ($(this).scrollTop() > 350) {
             $('.volta-ao-top').fadeIn();
